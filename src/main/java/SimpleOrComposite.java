@@ -1,17 +1,22 @@
+import java.util.Scanner;
+
 public class SimpleOrComposite {
     public static void main(String[] args) {
-        int a = 15;
-        boolean isComposite = false;
-        for (int i = 15; i < a; i++) {
-            if (a % i == 0) {
-                isComposite = true;
+        Scanner input = new Scanner(System.in);
+        boolean composite = true;
+
+        System.out.println("Введите число");
+        int num = input.nextInt();
+        for (int i = 2; i < 10; i++) {
+            if (num % i == 0) {
+                composite = false;
                 break;
             }
         }
-        if (isComposite) {
-            System.out.println("число составное ");
+        if (!composite) {
+            System.out.println("Число простое");
         } else {
-            System.out.println("число  простое ");
+            System.out.println("Число составное");
         }
     }
 }
